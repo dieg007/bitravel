@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;500&family=Roboto:ital,wght@0,100;0,300;0,500;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #1C2D69 ;
+}
+
+.contenedor {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: 600px;
+    background: #636363;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(67, 33%, 51%, 0.61), hsla(0, 0%, 39%, 0.603)), url(../Imagenes/pic_header.jpg);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(67, 33%, 51%, 0.61), hsla(0, 0%, 39%, 0.603)), url(../Imagenes/pic_header.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed; 
+    position: relative;
+}
+
+/*Navbar*/
+
+.navbar{
+  background-color: #D1F366;
+  color: #1C2D69;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+
+.primary-icon {
+  height: 40px;
+  border-radius: 50px;
+}
+.nav-list{
+  list-style-type: none;
+}
+
+.nav-list .list-item {
+  display: inline-block;
+  padding: 20px 30px;
+}
+
+.navbar a{
+  color: #1C1F37;
+  text-decoration: none;
+  padding: 0px 30px;
+}
+
+.navbar a:hover{
+ color: #1C2D69;
+ text-decoration: underline;
+}
+
+.menu {
+  display: none;
+}
+
+.menu-line {
+  width: 20px;
+  height: 3px;
+  background-color: #1C1F37;
+  margin-bottom: 4px;
+}
+
+@media all and (max-width: 480px) {
+  .navbar{
+    flex-direction: column;
+    position: relative;
+  }
+
+  .navbar .container-icon {
+    width: 100%;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  .nav-list {
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    display: none;
+  }
+
+  .nav-list .list-item {
+    display: block;
+    border-top: 1px solid white;
+  }
+
+  .primary-icon {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .active {
+    display: block;
+  }
+}
+
+header .textos-header {
+    display: flex;
+    height: 450px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.textos-header {
+    font-size: 30px;
+    font-weight: 300;
+    color: #1C2D69 ;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.textos-contenedor {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textos-contenedor > h3{
+    text-decoration: underline;
+    font-size: 20px;
+    color: #D1F366;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.textos-contenedor > h6 {
+  align-items: right;
+    color: #fff;
+    text-align: right;
+    padding: 15px;
+    font-weight: 300;
+}
+
+.textos-contenedor > h6:hover {
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+
+/*Cards Lugares*/
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {      
+  width: 100%;
+  height: 15rem;
+  border-radius: 10px;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0.1rem;
+  left: 1rem;
+  right: 0.5rem;
+  z-index: 1;      
+  border-radius: 10px;    
+  background-color: rgba(0, 0, 0, 0.5);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: 10px;    
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+  display: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: #fff;
+  -webkit-text-stroke: #000;
+}
+
+.card__status {
+  font-size: .8em;
+  color: #D1F366;
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #D1F366;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}    
+
+/*Footer*/
+
+footer{
+    position: bottom;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1C1F37;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #D1F366;
+}
+
+.footer-content{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+  }
+
+.footer-content h3{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+    margin: 0 10px;
+}
+
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color .4s ease;
+}
+
+.socials a:hover i{
+    color: #D1F366;
+}
+
+.footer-bottom{
+    background: #5F647E;
+    width: 100vw;
+    padding: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.footer-bottom p{
+  float: left;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom p a{
+  color:#D1F366;
+  font-size: 16px;
+  text-decoration: none;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}

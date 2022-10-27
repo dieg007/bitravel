@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiTravel</title>
+    <link rel="shortcut icon" href="Imagenes/Favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/styleF.css">
+    <script src="https://kit.fontawesome.com/4963d49c84.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div>
+                <a href="./index.html"> <img class="primary-icon" src="./Imagenes/Icono Bitravel (5).png" alt=""></a>
+            </div>
+            <ul class="nav-list" id="navi-list">
+                <li class="list-item">
+                    <a href="#">Quienes somos</a>
+                    <a href="#">Iniciar Sesión</a>
+                    <a href="./formulario.html">Registrarse</a>
+                </li>
+            </ul>
+            <div class="menu" id="toggleButton">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </div>
+        </nav>
+    </header>
+    <div class="MainForm">
+        <h3 align="center">Formulario Bitravel</h3><br>
+        <h3 align="center">Ingrese los datos para enviar promociones acorde a su preferencias </h2>
+
+            <form id="form" name="fvalida" action="https://formspree.io/f/mgeqlbdj" method="POST">
+
+                <div align="center" class="NombreApellido">
+                    <div>
+                        <label class="label" for="nombre">Nombre: </label>
+                        <input size="30" type="text" name="nombre" placeholder=" Ingrese su nombre aqui..." id="nombre">
+                        <br>
+                    </div>
+                    <div>
+                        <label class="label" for="apellido">Apellido: </label>
+                        <input size="30" type="text" name="apellido" placeholder=" Ingrese su apellido aqui..."
+                            id="apellido">
+                        <br><br>
+                    </div>
+                </div>
+
+                <div align="center" class="ProvinciaEmail">
+                    <div>
+                        <label class="label" for="provincia">Provincia: </label>
+                        <input size="30" type="text" name="Provincia" id="provincia">
+                        <br>
+                    </div>
+                    <div>
+                        <label class="label" for="email">Email: </label>
+                        <input type="email" name="email" id="email" required>
+                        <br><br>
+                    </div>
+                </div>
+
+                <div align="center">
+                    <label class="label" for="fecha">Fecha de nacimiento: </label>
+                    <input type="date" name="fecha" min="1900-01-01" max="2099-01-01" value="2022-09-29" id="fecha">
+                    <br><br>
+                </div>
+
+                <div class="chkbx">
+                    <legend class="label" style="color: white;">Métodos de pago preferidos:</legend>
+                    <input type="checkbox" id="BTC" name="Bitcoin">
+                    <label for="BTC">Bitcoin</label>
+
+                    <input type="checkbox" id="ETC" name="Ethereum" value="Ethereum">
+                    <label for="ETC">Ethereum</label>
+
+                    <input type="checkbox" id="XRP" name="Ripple" value="Ripple">
+                    <label for="XRP">Ripple</label>
+
+                    <input type="checkbox" id="LTC" name="Litecoin" value="Litecoin">
+                    <label for="LTC">Litecoin</label>
+
+                    <input type="checkbox" id="otramoneda" name="otramoneda" value="otramoneda">
+                    <label for="otramoneda">Otro</label>
+                </div>
+                <br>
+                <div class="chkbx">
+                    <legend class="label" style="color: white;">Destino preferidos:</legend>
+                    <input type="checkbox" id="BRC" name="BRC" value="BRC">
+                    <label for="BRC">Bariloche</label>
+
+                    <input type="checkbox" id="EZE" name="EZE" value="EZE">
+                    <label for="EZE">Buenos Aires</label>
+
+                    <input type="checkbox" id="MDZ" name="MDZ" value="MDZ">
+                    <label for="MDZ">Mendoza</label>
+
+                    <input type="checkbox" id="MDQ" name="MDQ" value="MDQ">
+                    <label for="MDQ">Mar del Plata</label>
+
+                    <input type="checkbox" id="otrodestino" name="otrodestino" value="otrodestino">
+                    <label for="otrodestino">Otro</label>
+                </div>
+                <br>
+                <div class="chkbx">
+                    <legend class="label" style="color: white;">Servicios:</legend>
+                    <input type="checkbox" id="hotel" name="hotel" value="hotel">
+                    <label for="hotel">Hoteles</label>
+
+                    <input type="checkbox" id="resto" name="resto" value="resto">
+                    <label for="resto">Restaurantes</label>
+
+                    <input type="checkbox" id="rentcar" name="rentcar" value="rentcar">
+                    <label for="rentcar">Alquiler de auto</label>
+
+                    <input type="checkbox" id="otroservicio" name="otroservicio" value="otroservicio">
+                    <label for="otroservicio">Otro</label>
+                </div>
+                <br>
+                <div>
+                    <label class="label" for="comentario">Comentario u otra moneda que usa y destino:</label>
+                    <textarea class="ComentarioArea" name="comentario" id="comentario" cols="40" rows="3"></textarea>
+
+
+                    <br><br>
+                    <input type="reset" id="b2" value="Borrar formulario">
+                    <input type="button" id="b1" value="Enviar" onclick="validarEnviar()">
+            </form><BR></BR>
+    </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Bitravel</h3>
+            <p>Una nueva forma de viajar <br> Seguinos en nuestras redes:</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="footer-bottom">
+            <p>copyright &copy;2022 <a href="index.html">Bitravel</a> </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
